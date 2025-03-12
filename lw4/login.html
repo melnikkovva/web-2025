@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Login</title>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    
    <h1>Войти</h1> 
-   <img src="main-first-photo.png" width="400" alt="Login Photo">
+   <img class="main-first-photo" src="main-first-photo.png" width="460" alt="Login Photo">
+   <div class="registration-block">
    <form action="home.html">
         <p>Электропочта</p>
-        <input type="text">
-        <p>Введите электропочту в формате *****@***.**</p>
+        <input class="login-input" type="text">
+        <p class="hint">Введите электропочту в формате *****@***.**</p>
         <p>Пароль</p>
-        <input type="password">
+        <input class="login-input" type="password">
+        <img class="eye-off" src="marks/Eye-off.svg" alt="Скрыть">
    </form>
-   <button>Продолжить</button>
+   <button class="login-button-continue">Продолжить</button>
+    </div>
 </body>
 </html>

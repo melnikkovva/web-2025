@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Golos Text", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.avatar-in-profile{
+    border-radius: 10px;
+}
+
+.posts{
+    max-width: 1630px;
+    margin-left: 17%;
+}
+
+.name-of-user{
+    font-size: 32px;
+    font-weight: 500;
+    color: #222222;
+}
+
+.about-user{
+    text-align: center;
+    max-width: 360px;
+    margin-left: 24%;
+}
+
+.number-of-post{
+    background-color: #F2F3F5;
+    max-width: 70px;
+    height: 30px;
+    border-radius: 8px;
+    margin: auto;
+}
