@@ -26,15 +26,26 @@ body{
 }
 
 .about-user{
+    margin-top: -80px;
     text-align: center;
     max-width: 360px;
     margin-left: 24%;
+    margin-bottom: 45px;
 }
 
 .number-of-post{
     background-color: #F2F3F5;
-    max-width: 70px;
+    max-width: 101px;
     height: 30px;
     border-radius: 8px;
     margin: auto;
+    display: inline-block;
+}
+
+.user-name{
+    margin-bottom: 20px;
+}
+
+.menu-of-home{
+    display: block;
 }

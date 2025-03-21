@@ -11,8 +11,9 @@ body{
 }
 
 .post{
+    display: block;
     margin-left: 35%;
-    max-width: 480px;
+    max-width: 450px;
 }
 
 .expand-post{
@@ -29,6 +30,7 @@ body{
     max-width: 70px;
     height: 30px;
     border-radius: 8px;
+    display: inline-block;
 }
 
 .like {
@@ -38,4 +40,20 @@ body{
 
 .name-in-post{
     font-weight: 500;
+}
+
+.head-of-post{
+    display: inline-block;
+}
+
+.menu-of-home{
+    display: block;
+}
+
+.main-information{
+    display: block;
+}
+
+.about-user{
+    margin-bottom: 45px;
 }

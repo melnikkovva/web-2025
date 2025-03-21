@@ -2,20 +2,20 @@
 <html lang="ru">
 <head>
     <title>Регистрация</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/login/login.css">
+    <link rel="stylesheet" href="/login/font.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
    <h1>Войти</h1> 
    <img class="main-first-photo" src="main-first-photo.png" width="460" alt="Login Photo">
    <div class="registration-block">
    <form action="home.html">
-        <p>Электропочта</p>
-        <input class="login-input" type="text">
+        <label class="label" for="email">Электропочта</label>
+        <input id="email" class="login-input" type="text">
         <p class="hint">Введите электропочту в формате *****@***.**</p>
-        <p>Пароль</p>
-        <input class="login-input" type="password">
+        <label class="label" for="password">Пароль</label>
+        <input id="password" class="login-input" type="password">
         <img class="eye-off" src="marks/Eye-off.svg" alt="Скрыть">
    </form>
    <button class="login-button-continue">Продолжить</button>
