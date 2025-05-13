@@ -1,0 +1,28 @@
+create databaseblog
+show databases
+use blog
+CREATE TABLE post (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, image VARCHAR(100), PRIMARY KEY ('id'))
+
+<?php
+  require_once 'include/'
+
+  var_dump(connectToDatabase);
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Главная</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="/font.css" rel="stylesheet">
+</head>
+<body>
+    div.container
+    <h1> создать пост <h1>
+    <?php
+    foreach ($posts as $post) {
+        include 'temlates/post.php';
+    }
+    ?>
+</body>
+</html>

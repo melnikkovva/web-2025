@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Ваня Денисов",
+        "about_user": "Привет! Я системный аналитик в ACME 🙂 Тут моя жизнь только для самых классных!",
+        "email": "ivan@example.com",
+        "password": "qwerty1234",
+        "avatar": "../images/avatars/vanya.png",
+        "city": "Йошкар-Ола",
+        "registered_at": 1650902294
+    },
+    {
+        "id": 2,
+        "name": "Лиза Дёмина",
+        "about_user": "Привет!",
+        "email": "elizabeth@example.com",
+        "password": "abccd5555",
+        "avatar": "../images/avatars/liza.png",
+        "city": "Санкт-Петербург",
+        "registered_at": 1726156694 
+      }
+  ]

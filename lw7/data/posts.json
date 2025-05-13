@@ -1,0 +1,75 @@
+[
+    {
+        "id": "0df170c2-a749-4381-9651-03686abab9ac",
+        "user_id": 1,
+        "pictures": [
+          "../images/posts/user1/post-photo.png",
+          "../images/posts/user1/winter2.png"
+        ],
+        
+        "content": "Так красиво сегодня на улице! Настоящая зима!...",
+        "likes": 203,
+        "posted_at": 1746974012
+    },
+    {
+        "id": "76847f27-fd13-41a4-b12c-12daf0ac9465",
+        "user_id": 1,
+        "pictures": [
+        "../images/posts/user1/post-photo.png"
+        ],
+        "content": "Воздух пахнет цветущей сиренью, солнце ласкает кожу — весна расцветает прямо на глазах!",
+        "likes": 250,
+        "posted_at": 1746455612
+    },
+    {
+      "id": "136d9133-7647-40f2-beca-83a953084311",
+      "user_id": 1,
+      "pictures": [
+        "../images/posts/user1/post-photo.png"
+        ],
+      "content": "Дождь стучит по подоконнику, как убаюкивающая мелодия — идеальный день для чая и книг!",
+      "likes": 228,
+      "posted_at": 1743964747
+    },
+    {
+      "id": "39de1cfb-3742-48bb-aa79-dde319918083",
+      "user_id": 1,
+      "pictures": [
+        "../images/posts/user1/post-photo.png"
+        ],
+      "content": "Небо разрывают молнии, гром гремит, как оркестр — природа устроила настоящее шоу!",
+      "likes": 207,
+      "posted_at": 1744051147
+    },
+    {
+      "id": "9f051055-a4c7-4ad9-a72d-7d6f5740723f",
+      "user_id": 1,
+      "pictures": [
+        "../images/posts/user1/post-photo.png"
+        ],
+      "content": "Всё вокруг окутано таинственной дымкой — будто попал в мистический фильм!",
+      "likes": 139,
+      "posted_at": 1744137547
+    },
+    {
+      "id": "b293fbd6-c5a9-44f0-9174-9fb5360bd795",
+      "user_id": 1,
+      "pictures": [
+        "../images/posts/user1/post-photo.png"
+        ],
+      "content": "Листья кружатся в воздухе, как золотой дождь — осень пишет свою живописную сказку!",
+      "likes": 458,
+      "posted_at": 1744223947
+    },
+    {
+      "id": "ba6beb50-d11c-4d37-8f05-385aa00a4ead",
+      "user_id": 2,
+      "pictures": [
+        "../images/posts/user2/post-liza.jpg"
+        ],
+      "content": "Пушистые снежинки медленно опускаются на землю — зима начинает свой тихий балет!",
+      "likes": 192,
+      "posted_at": 1708007612
+    }
+  ]
+  
