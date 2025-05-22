@@ -1,19 +1,18 @@
 [
     {
         "id": "0df170c2-a749-4381-9651-03686abab9ac",
-        "user_id": 1,
+        "user_id": "d7c47315-9eb4-41e8-b5f4-745c260fcd2d",
         "pictures": [
           "../images/posts/user1/post-photo.png",
           "../images/posts/user1/winter2.png"
         ],
-        
         "content": "Так красиво сегодня на улице! Настоящая зима!...",
         "likes": 203,
         "posted_at": 1746974012
     },
     {
         "id": "76847f27-fd13-41a4-b12c-12daf0ac9465",
-        "user_id": 1,
+        "user_id": "d7c47315-9eb4-41e8-b5f4-745c260fcd2d",
         "pictures": [
         "../images/posts/user1/post-photo.png"
         ],
@@ -23,7 +22,7 @@
     },
     {
       "id": "136d9133-7647-40f2-beca-83a953084311",
-      "user_id": 1,
+      "user_id": "d7c47315-9eb4-41e8-b5f4-745c260fcd2d",
       "pictures": [
         "../images/posts/user1/post-photo.png"
         ],
@@ -33,7 +32,7 @@
     },
     {
       "id": "39de1cfb-3742-48bb-aa79-dde319918083",
-      "user_id": 1,
+      "user_id": "d7c47315-9eb4-41e8-b5f4-745c260fcd2d",
       "pictures": [
         "../images/posts/user1/post-photo.png"
         ],
@@ -43,7 +42,7 @@
     },
     {
       "id": "9f051055-a4c7-4ad9-a72d-7d6f5740723f",
-      "user_id": 1,
+      "user_id": "d7c47315-9eb4-41e8-b5f4-745c260fcd2d",
       "pictures": [
         "../images/posts/user1/post-photo.png"
         ],
@@ -53,7 +52,7 @@
     },
     {
       "id": "b293fbd6-c5a9-44f0-9174-9fb5360bd795",
-      "user_id": 1,
+      "user_id": "d7c47315-9eb4-41e8-b5f4-745c260fcd2d",
       "pictures": [
         "../images/posts/user1/post-photo.png"
         ],
@@ -63,13 +62,43 @@
     },
     {
       "id": "ba6beb50-d11c-4d37-8f05-385aa00a4ead",
-      "user_id": 2,
+      "user_id":  "80902da9-c9df-4245-b98d-47c7acc01517",
       "pictures": [
         "../images/posts/user2/post-liza.jpg"
         ],
       "content": "Пушистые снежинки медленно опускаются на землю — зима начинает свой тихий балет!",
       "likes": 192,
       "posted_at": 1708007612
+    },
+    {
+      "id": "9a1ce812-c15c-4c48-a19a-4a7ad9986e2b",
+      "user_id": "63d9b76d-3b5c-419e-b7b1-92ad48664a7a",
+      "pictures": [
+        "../images/posts/user3/post-toxa.png"
+        ],
+      "content": "Пушистые снежинки медленно опускаются на землю — зима начинает свой тихий балет!",
+      "likes": 196,
+      "posted_at": 1740769342
+    },
+    {
+      "id": "b53b8e88-c471-4434-942f-568370c02749",
+      "user_id": "63d9b76d-3b5c-419e-b7b1-92ad48664a7a",
+      "pictures": [
+        "../images/posts/user3/post-toxa2.png"
+        ],
+      "content": "Пушистые снежинки медленно опускаются на землю — зима начинает свой тихий балет!",
+      "likes": 100,
+      "posted_at": 1747249342
+    },
+    {
+      "id": "d42e3e83-3e83-4543-a8f3-8b4569ade81c",
+      "user_id": "63d9b76d-3b5c-419e-b7b1-92ad48664a7a",
+      "pictures": [
+        "../images/posts/user3/post-toxa3.png"
+        ],
+      "content": "Пушистые снежинки медленно опускаются на землю — зима начинает свой тихий балет!",
+      "likes": 390,
+      "posted_at": 1736881342
     }
   ]
   

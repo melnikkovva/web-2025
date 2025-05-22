@@ -28,11 +28,12 @@ function isPrimeNumber(input) {
             checkPrimeNumber(input[i])
         }
      } else {
-        console.log('Incorrent input')
+        console.log('Error')
      }
 }
 
-isPrimeNumber(5);
+isPrimeNumber(1);
+isPrimeNumber(57);
 isPrimeNumber('5');
-isPrimeNumber(10);
+isPrimeNumber(100);
 isPrimeNumber([2, 3, 4, 5]);

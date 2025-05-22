@@ -1,8 +1,22 @@
 <?php
+    require_once '../data/validation/validation.php';
+
     $users_json = file_get_contents("../data/users.json", true);
     $users = json_decode($users_json, true);
     $posts_json = file_get_contents("../data/posts.json", true);
     $posts = json_decode($posts_json, true);
+
+    foreach ($users as $user) {
+        if (!validateUser($user)) {
+            die("Некорректные данные пользователя.");
+        }
+    }
+
+    foreach ($posts as $post) {
+        if (!validatePost($post)) {
+            die("Некорректные данные поста.");
+        }
+    }
 ?>
 
 <!-- image-home - side-bar__home
@@ -21,11 +35,11 @@ lenta - page-body  -->
 <body>
     <div class="content">
         <div class="side-bar">
-            <div class="side-bar__mark"> 
-                <img src="../images/marks/go-home-active.svg" alt="Вернуться">
+        <div class="side-bar__mark">
+                <a href="../home"><img src="../images/marks/go-home.svg" alt="Вернуться"></a>
             </div>
             <div class="side-bar__mark">
-                <img src="../images/marks/my_account.svg" alt="Мой аккаунт">
+                <a href="../profile"><img src="../images/marks/my_account_active.svg" alt="Мой аккаунт"></a>
             </div>
             <div class="side-bar__mark">
                 <img src="../images/marks/new-post.svg" alt="Новый пост"> 
