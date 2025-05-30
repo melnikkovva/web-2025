@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Golos UI", sans-serif; 
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.post {
+    margin-top: 36px;
+}
+
+.post__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post__header__name {
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #222222;
+    text-decoration: none;
+}
+
+.post__header__pen-button {
+    margin-left: auto;
+}
+
+.post__likes {
+    margin-top: 16px;
+}
+
+.post__likes__number {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    margin-left: 3px;
+}
+
+.post__description {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #222222;
+    margin-top: 16px;
+}
+
+.post__time {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #22222280;
+    margin-top: 8px;
+}
+
+.post__likes__mark-like {
+    width: 16px;
+}
+
+.post {
+    max-width: 475px;
+}
+
+.post__likes {
+    display: flex;
+    width: fit-content;
+    background-color: #2222220D;
+    border-radius: 8px;
+    padding: 7px 12px 7px 12px;
+}
+
+.post__header__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    box-sizing: content-box;
+    border: 1px solid #2222220D;
+}
+
+.side-bar__icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
+}
+
+.page-body {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
+.post-images-slider__image {
+    margin-bottom: 16px;
+    width: 475px;
+    height: 475px;
+}
+
+.post-images-slider {
+    position: relative;
+    margin-top: 16px;
+    overflow: hidden;
+    width: 475px;
+    height: 475px;
+}
+
+/* Стили слайдера */
+.post-images-slider {
+    position: relative;
+    margin-top: 16px;
+    width: 475px;
+    height: 475px;
+    overflow: hidden;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+}
+
+.slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.slider-item {
+    flex: 0 0 100%;
+    min-width: 100%;
+}
+
+.post-images-slider__image {
+    width: 100%;
+    height: 475px;
+    object-fit: cover;
+}
+
+/* Элементы управления слайдером */
+.slider-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #FFFFFF99;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding-bottom: 5px;
+    transition: background 0.2s ease;
+}
+
+.slider-next:hover {
+    background: #FFFFFF;
+}
+
+.slider-prev:hover {
+    background: #FFFFFF;
+}
+
+.slider-prev {
+    left: 16px;
+}
+
+.slider-next {
+    right: 16px;
+}
+
+.slider-counter {
+    width: fit-content;
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    background: #22222280;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+}

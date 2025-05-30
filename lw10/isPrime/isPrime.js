@@ -1,39 +1,46 @@
-function checkPrime(n) {
-    let isPrime;
-    isPrime = true;
-    for (let i = 2; i < n; i++) {
-        if (n % i == 0) {
-            isPrime = false;
-            break;
+function isPrime(num) {
+      
+    for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
+        if (num % i === 0) {
+            return false;
         }
     }
-    if (isPrime) {
-        return true;
-    }
+    return true;
 }
 
-function checkPrimeNumber(input) {
-    if (checkPrime(input)) {
-        console.log(`${input} простое число`);
+function printPrimeStatus(number) {
+    if (!Number.isInteger(number)) {
+        console.log(number + ' - не является целым числом');
+    } else if (number < 2) {
+        console.log(number + ' - не простое число (меньше 2)');
     } else {
-        console.log(`${input} не простое число`);
+        console.log(number + ' - ' + (isPrime(number) ? 'простое' : 'не простое') + ' число');
     }
 }
 
-function isPrimeNumber(input) {
+function checkInput(input) {
     if (typeof input === 'number') {
-        checkPrimeNumber(input);
-     } else if (Array.isArray(input)) {
-        for (let i = 0; i < input.length; i++) {
-            checkPrimeNumber(input[i])
-        }
-     } else {
-        console.log('Error')
-     }
+        printPrimeStatus(input);
+    } else if (Array.isArray(input)) {
+        input.forEach(num => {
+            if (typeof num === 'number') {
+                printPrimeStatus(num);
+            } else {
+                console.log(num + ' - не число');
+            }
+        });
+    } else {
+        console.log('Введите число или массив чисел');
+    }
 }
 
-isPrimeNumber(1);
-isPrimeNumber(57);
-isPrimeNumber('5');
-isPrimeNumber(100);
-isPrimeNumber([2, 3, 4, 5]);
+checkInput(3);   
+checkInput(4);    
+checkInput([3, 4, 5]); 
+checkInput('абв'); 
+checkInput(0);   
+checkInput(1);    
+checkInput(-5);   
+checkInput(2.5); 
+checkInput([7, 'текст', 9.3]); 
+checkInput({});

@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Golos UI", sans-serif; 
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.post {
+    margin-top: 36px;
+}
+
+.post__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post__header__name {
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #222222;
+    text-decoration: none;
+}
+
+.post__header__pen-button {
+    margin-left: auto;
+}
+
+.post__likes__number {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    margin-left: 3px;
+}
+
+.post__description {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #222222;
+    margin-top: 16px;
+}
+
+.post__time {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #22222280;
+    margin-top: 8px;
+}
+
+.post__likes__mark-like {
+    width: 16px;
+}
+
+.post {
+    max-width: 475px;
+}
+
+.post__likes {
+    display: flex;
+    width: fit-content;
+    background-color: #2222220D;
+    border-radius: 8px;
+    padding: 7px 12px 7px 12px;
+}
+
+.post__header__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    box-sizing: content-box;
+    border: 1px solid #2222220D;
+}
+
+.side-bar__icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
+}
+
+.page-body {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
+.post-image__image {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 475px;
+    height: 475px;
+}

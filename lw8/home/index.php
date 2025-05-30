@@ -1,53 +1,52 @@
+<?php
+require_once 'post.php';
+require_once '../script.php';
 
+$connection = connectDatabase();
+$users = getUsers($connection);
+$users = array_values($users);
+$posts = getPosts($connection);
+$posts = array_values($posts);
+$images = getImages($connection);
+$images = array_values($images);
 
-<!-- image-home - side-bar__home
-menu-of-home - side-bar
-image-my-account - side-bar__my-account
-image-of-new-post - side-bar__new-post
-lenta - page-body  -->
+$filterByUserId = $_GET['id'] ?? null;
+?>
 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <title>Главная</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link href="../font.css" rel="stylesheet">
 </head>
 <body>
     <div class="content">
         <div class="side-bar">
-        <div class="side-bar__mark">
+            <div class="side-bar__icon">
                 <a href="../home"><img src="../images/marks/go-home.svg" alt="Вернуться"></a>
             </div>
-            <div class="side-bar__mark">
+            <div class="side-bar__icon">
                 <a href="../profile"><img src="../images/marks/my_account_active.svg" alt="Мой аккаунт"></a>
             </div>
-            <div class="side-bar__mark">
+            <div class="side-bar__icon">
                 <img src="../images/marks/new-post.svg" alt="Новый пост"> 
             </div>
         </div>
         <div class="page-body">
-        <?php
-            require_once 'post.php';
-            require_once 'script.php';
-            
-            $users = getUsers();
-            $users = array_values($users);
-            $posts = getPosts();
-            $posts = array_values($posts);
-
+            <?php
             foreach ($posts as $post) {
-                $user_data = $users[array_search($post["user_id"], array_column($users, "user_id"))];
-                if (isset($_GET['user_id'])) {
-                    $userId = 1;
-                    if (is_numeric($_GET['user_id'])) {
-                        $userId = $_GET['user_id'];
+                $user_data = $users[array_search($post["user_id"], array_column($users, "id"))];
+                
+                $post_images = [];
+                foreach ($images as $image) {
+                    if ($image['post_id'] == $post['id']) {
+                        $post_images[] = ['image_path' => $image['image_path']];
                     }
-                    if ($user_data['user_id'] == $userId) {
-                        renderPost($post, $user_data);
-                    }
-                } else {
-                    renderPost($post, $user_data);
+                }
+                
+                if (!$filterByUserId || $user_data['id'] == $filterByUserId) {
+                    makePost($post, $user_data, $post_images);
                 }
             }
             ?>

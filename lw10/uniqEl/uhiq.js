@@ -1,14 +1,16 @@
-function uniqueElements(arr) {
-  const result = {};
+function uniqueElements(array) {
+  const elementCounts = {};
   
-  for (const key of arr) {
-      const keyStr = String(key);
-      (!result[keyStr])
-      ? result[keyStr] = 1
-      : result[keyStr] += 1;
+  for (const element of array) {
+      const stringKey = String(element);
+      if (!elementCounts[stringKey]) {
+          elementCounts[stringKey] = 1;
+      } else {
+          elementCounts[stringKey] += 1;
+      }
   }
   
-  return result;
+  return elementCounts;
 }
 
-console.log(uniqueElements(['привет', 'hello', 'hello', 1, '1', 2, 2, '2']));
+console.log(uniqueElements(['привет', 'hello', 1, '1'])); // {'привет': 1, 'hello': 1, '1': 2}

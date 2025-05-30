@@ -1,60 +1,71 @@
 <?php
     require_once '../data/validation/validation.php';
 
-    $users_json = file_get_contents("../data/users.json", true);
-    $users = json_decode($users_json, true);
-    $posts_json = file_get_contents("../data/posts.json", true);
-    $posts = json_decode($posts_json, true);
+    $users = json_decode(file_get_contents("../data/users.json"), true);
+    $posts = json_decode(file_get_contents("../data/posts.json"), true);
 
     foreach ($users as $user) {
         if (!validateUser($user)) {
-            die("Некорректные данные пользователя.");
+            exit("Некорректные данные пользователя");
         }
     }
 
     foreach ($posts as $post) {
         if (!validatePost($post)) {
-            die("Некорректные данные поста.");
+            exit("Некорректные данные поста");
         }
     }
-?>
 
-<!-- image-home - side-bar__home
-menu-of-home - side-bar
-image-my-account - side-bar__my-account
-image-of-new-post - side-bar__new-post
-lenta - page-body  -->
+    function findUserById($users, $id) {
+        foreach ($users as $user) {
+            if ((int)$user['id'] === (int)$id) {
+                return $user;
+            }
+        }
+        return null;
+    }
+
+    // Получаем ID пользователя из URL, если он есть
+    $filterUserId = isset($_GET['user_id']) ? (int)$_GET['user_id'] : null;
+?>
 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <title>Главная</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link href="../font.css" rel="stylesheet">
 </head>
 <body>
-    <div class="content">
+    <div class="main-page">
         <div class="side-bar">
-        <div class="side-bar__mark">
-                <a href="../home"><img src="../images/marks/go-home.svg" alt="Вернуться"></a>
+            <div class="side-bar__icon">
+                <a href="../home"><img src="../images/marks/go-home.svg" alt="Главная"></a>
             </div>
-            <div class="side-bar__mark">
-                <a href="../profile"><img src="../images/marks/my_account_active.svg" alt="Мой аккаунт"></a>
+            <div class="side-bar__icon">
+                <a href="../profile"><img src="../images/marks/my_account_active.svg" alt="Профиль"></a>
             </div>
-            <div class="side-bar__mark">
-                <img src="../images/marks/new-post.svg" alt="Новый пост"> 
+            <div class="side-bar__icon">
+                <img src="../images/marks/new-post.svg" alt="Новый пост">
             </div>
         </div>
-        <div class="page-body">
+        <div class="feed">
             <?php
-                require_once 'post.php';
-                foreach ($posts as $post) {
-                    $user_id = array_search($post["user_id"], array_column($users, "id"));
-                    $user= $users[$user_id];
+            require_once 'post.php';
+            foreach ($posts as $post) {
+                // Если задан user_id, показываем только его посты
+                if ($filterUserId !== null && (int)$post['user_id'] !== $filterUserId) {
+                    continue;
+                }
+                
+                $user = findUserById($users, $post['user_id']);
+                if ($user) {
                     makePost($post, $user);
                 }
+            }
             ?>
         </div>
     </div>
+    <script src="js/slider.js"></script>
 </body>
 </html>

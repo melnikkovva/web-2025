@@ -1,36 +1,44 @@
 <?php
-    require_once '../data/validation/validation.php';
+require_once 'profile.php';
+require_once '../script.php';
 
-    $users_json = file_get_contents("../data/users.json", true);
-    $users = json_decode($users_json, true);
-    $posts_json = file_get_contents("../data/posts.json", true);
-    $posts = json_decode($posts_json, true);
-    $id = 1; 
+$connection = connectDatabase();
+$users = getUsers($connection);
+$users = array_values($users);
+$posts = getPosts($connection);
+$posts = array_values($posts);
+$images = getImages($connection);
+$images = array_values($images);
 
-    $user_data = $users[$id];
-    if (isset($_GET['id'])) {
-        if (is_numeric($_GET['id'])) {
-            $id = (int)$_GET['id'];
-        } else {
-            die("Error");
+$filterByUserId = $_GET['id'] ?? null;
+
+// Находим пользователя по ID
+$user_data = null;
+foreach ($users as $user) {
+    if ($user['id'] == $filterByUserId) {
+        $user_data = $user;
+        break;
+    }
+}
+
+if (!$user_data) {
+    die("Пользователь не найден"); 
+}
+
+// Собираем посты пользователя
+$user_posts = [];
+foreach ($posts as $post) {
+    if ($post['user_id'] == $user_data['id']) {
+        $post_images = [];
+        foreach ($images as $image) {
+            if ($image['post_id'] == $post['id']) {
+                $post_images[] = $image['image_path'];
+            }
         }
+        $post['images'] = $post_images;
+        $user_posts[] = $post;
     }
-
-    $user_data = null;
-    foreach ($users as $user) {
-        if ($user['id'] == $id && validateUser($user)) {
-            $user_data = $user;
-            break;
-        }
-    }
-    if (!$user_data) {
-        die("Error");
-    }
-    $id = $user_data['id'];
-    $user_posts = array_filter($posts, function ($post) use ($id) {
-        return $post['user_id'] == $id;
-    });
-    $user_posts = array_values($user_posts);
+}
 ?>
 
 <!DOCTYPE html>
@@ -54,10 +62,7 @@
             </div>
         </div>
         <div class="profile">
-            <?php
-                require_once 'profile.php';
-                makeProfile($user_posts, $user_data);
-            ?>  
+            <?php makeProfile($user_data, $user_posts); ?>  
         </div>
     </div>
 </body>
